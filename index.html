@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House24</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+    <div class="mytemp-container">
+        <h1 class="mytemp-title">House24</h1>
+        <div class="mytemp-chart-wrapper">
+            <canvas id="mytemp-chart" class="mytemp-chart"></canvas>
+        </div>
+        <div class="mytemp-info" id="mytemp-info">
+            データを読み込み中...
+        </div>
+        <!-- バッテリー残量表示 -->
+        <div class="mytemp-battery" id="mytemp-battery">
+            最新のバッテリー残量: 
+        </div>
+        <div class="mytemp-info mytemp-table" id="mytemp-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>時間</th>
+                        <th>温度 (°C)</th>
+                    </tr>
+                </thead>
+                <tbody id="mytemp-table-body">
+                    <!-- テーブルの内容はJavaScriptで動的に生成 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="utils.js"></script>
+    <script>
+        // ページ読み込み時にデータを読み込む
+        document.addEventListener('DOMContentLoaded', loadTemperatureData);
+    </script>
+</body>
+
+</html>
